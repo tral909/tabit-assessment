@@ -15,7 +15,7 @@ public interface IAlexandriaGameEngine {
 
     /**
      * Returns which player is next in line, e.g. 'Player 3'.
-     * This call does NOT advances the player on the board.
+     * This call does NOT advance the player on the board.
      * */
     String nextPlayer();
 

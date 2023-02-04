@@ -2,6 +2,7 @@ package de.tabit.test.alexandria.simulation;
 
 import de.tabit.test.alexandria.engine.api.IAlexandriaGameEngine;
 import de.tabit.test.alexandria.engine.dummy.DummyEngine;
+import de.tabit.test.alexandria.engine.dummy.regorov.RomanEgorovEngine;
 
 import java.io.*;
 
@@ -9,7 +10,7 @@ import static java.lang.String.format;
 
 public class AlexandriaSimulation {
 
-    private static final Boolean USE_DUMMY_ENGINE = Boolean.TRUE;
+    private static final Boolean USE_DUMMY_ENGINE = Boolean.FALSE;
 
     public static void main(String[] args) {
         IAlexandriaGameEngine gameEngine = locateGameEngine();
@@ -57,7 +58,7 @@ public class AlexandriaSimulation {
         if (USE_DUMMY_ENGINE) {
             return new DummyEngine();
         }
-        throw new IllegalStateException("Working engine not yet implemented!");
+        return new RomanEgorovEngine();
     }
 
     private static Integer userInput()
